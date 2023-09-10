@@ -7,7 +7,7 @@
 
 <body>
 	<h2>Please enter your details-----</h2>
-	<form action="/homepage" method="post"> 
+	<form action="/homepage" method="post" enctype="multipart/form-data"> 
         <label for="name">Enter Name:</label>
 		<input type="text" id="name" name="name" placeholder="your name">
 		<label for="address">Enter Address:</label>
@@ -16,8 +16,26 @@
 		<input type="text" id="pan" name="pan" placeholder="pan number">
 		<label for="gst number">Enter GSTIN Number:</label>
 		<input type="text" id="gst" name="gst" placeholder="GSTIN Number">
+		<br>
+		<br>
 		<label for="gst number">Upload proof for GST number:</label>
-		<input type="file" name="gst_file" /><input type = "submit" value="Upload"> 
+		<input type="file" name="gst_file" />
+
+		<h4>Enter Defaulter details:</h4>
+		<label for="dname">Enter Defaulter Name:</label>
+		<input type="text" id="dname" name="dname" placeholder="name">
+		<label for="daddress">Enter Defaulter Address:</label>
+		<textarea id="daddress" name="daddress" rows="5" cols="33"></textarea>
+
+		<label for="d gst number">Enter Deafulter GSTIN Number:</label>
+		<input type="text" id="dgst" name="dgst" placeholder="GSTIN Number">
+		<br>
+		<br>
+		<label for="d gst number">Upload proof of Fraud occured:</label>
+		<input type="file" name="d_gst_file" />
+
+		<br>
+		<br>
 		<button type="submit">Submit</button>
  
     </form>

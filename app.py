@@ -2,6 +2,7 @@
 # An object of Flask class is our WSGI application.
 from flask import Flask, render_template, request
 from fileinput import filename
+import os
 
 # Flask constructor takes the name of
 # current module (__name__) as argument.
@@ -36,15 +37,19 @@ def gfg():
        name = request.form.get("name")
        # getting input with name = lname in HTML form
        address = request.form.get("address")
+       os.mkdir("proof_documents/"+name)
+       gst_file = request.files['gst_file']
+       gst_file.save("proof_documents/"+name+"/user_gst_proof.pdf")  
+
        return "Your name is "+name +" "+ address
     return render_template("index.html")
  
-@app.route('/success', methods = ['POST'])  
-def success():  
-    if request.method == 'POST':  
-        f = request.files['file']
-        f.save(f.filename)  
-        return render_template("Acknowledgement.html", name = f.filename)  
+# @app.route('/success', methods = ['POST'])  
+# def success():  
+#     if request.method == 'POST':  
+#         f = request.files['file']
+#         f.save(f.filename)  
+#         return render_template("Acknowledgement.html", name = f.filename)  
   
 
 # main driver function
@@ -53,3 +58,35 @@ if __name__ == '__main__':
 	# run() method of Flask class runs the application
 	# on the local development server.
 	app.run()
+      
+
+
+
+
+
+
+
+
+
+
+      
+
+# from distutils.log import debug
+# from fileinput import filename
+# from flask import *
+# app = Flask(__name__)
+
+# @app.route('/')
+# def main():
+# 	return render_template("tester.html")
+
+# @app.route('/success', methods = ['POST'])
+# def success():
+# 	if request.method == 'POST':
+# 		f = request.files['file']
+# 		f.save(f.filename)
+# 		return render_template("Acknowledgement.html", name = f.filename)
+
+# if __name__ == '__main__':
+# 	app.run(debug=True)
+
