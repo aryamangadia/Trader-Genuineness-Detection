@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FlaskTest</title>
+</head>
+
+<body>
+	<h2>Please enter your details-----</h2>
+	<form action="/homepage" method="post"> 
+        <label for="name">Enter Name:</label>
+		<input type="text" id="name" name="name" placeholder="your name">
+		<label for="address">Enter Address:</label>
+		<textarea id="address" name="address" rows="5" cols="33"></textarea>
+		<label for="pan number">Enter PAN Number:</label>
+		<input type="text" id="pan" name="pan" placeholder="pan number">
+		<label for="gst number">Enter GSTIN Number:</label>
+		<input type="text" id="gst" name="gst" placeholder="GSTIN Number">
+		<label for="gst number">Upload proof for GST number:</label>
+		<input type="file" name="gst_file" /><input type = "submit" value="Upload"> 
+		<button type="submit">Submit</button>
+ 
+    </form>
+
+
+</body>
+
+</html>
